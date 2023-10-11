@@ -1,59 +1,59 @@
 class Test{
     
+    // spiral matrix printing
+    public static void spiralMatrix(int arr[][]){
+        int startRow = 0;
+        int startCol = 0;
+        int endRow = arr.length-1;
+        int endCol = arr[0].length-1;
 
-    // public static int countWords(String str){
-    //     int count = 0;
-    //     for(int i=1; i<str.length(); i++){
-    //         if((str.charAt(i-1)!=' ' && str.charAt(i)==' ' ) || (str.charAt(i)!= ' ' &&  i == str.length()-1)){
-    //             count++;
-    //         }
-
-    //     }
-    //     return count;
-    // }
-
-    // public static String spaceRemover(String str){
-    //     String res = "";
-    //     for(int i=0; i< str.length(); i++){
-    //         if(str.charAt(i)!= ' '){
-    //             res += str.charAt(i);
-    //         }
-    //     }
-
-    //     return res;
-    // }
-
-    public static double displacementFinder(String str){
-        double  res ;
-        int x=0;
-        int y=0;
-
-        for(int i=0; i< str.length(); i++){
-            if(str.charAt(i)== 'E'){
-                x++;
+        while(startRow<=endRow && startCol<= endCol){
+            //top
+            for(int i=startCol; i<=endCol; i++){
+                System.out.print(arr[startRow][i]+","); 
             }
-            else if(str.charAt(i)== 'W'){
-                x--;
+            //right
+            for(int i=startRow+1; i<=endRow; i++){
+                System.out.print(arr[i][endCol]+",");
             }
-            else if(str.charAt(i)== 'N'){
-                y++;
+            //bottom
+            for(int i=endCol-1; i>=startCol; i--){
+                if(startCol==endCol){
+                    return;
+                }
+                System.out.print(arr[endRow][i]+",");
             }
-            else{
-                x--;
+            //left 
+            for(int i=endRow-1; i>=startRow+1; i--){
+                System.out.print(arr[i][startCol]+",");
             }
+            startRow++;
+            startCol++;
+            endCol--;
+            endRow--;
         }
-        res = Math.sqrt((x*x+y*y));
-        return res;
     }
+
+    
 
     public static void main(String[] args) {
         
-        String str="Shubham";
-        int n=str.length();  
-        System.out.println(n);      
+        int arr[][] = new int[][]{
+            {1,2,3,4},
+            {5,6,7,8},
+            {9,10,11,12},
+            {13,14,15,16}
+        };
+        int arr1[][] = new int[][]{
+            {1,2,3},
+            {5,6,7},
+            {9,10,11}
+            
+        };
 
-        // System.out.println(displacementFinder(str));
-
+        spiralMatrix(arr);
+        System.out.println();
+        spiralMatrix(arr1);
 
 
     }
