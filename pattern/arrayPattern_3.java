@@ -11,7 +11,7 @@
 
  */
 
-import java.util.*;
+
 class Test{
     public static void main(String[] args) {
         int arr[] = new int[] {4,5,2,1,6,2};

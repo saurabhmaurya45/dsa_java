@@ -1,7 +1,7 @@
 /*Program to find average of an array */
 
 
-import java.util.*;
+
 
 class avgArray {
     // recursive implementaion
@@ -12,7 +12,7 @@ class avgArray {
         }
         return (arr[i]+sumArray(arr, i+1));
     }
-    public static long avgArray(int arr[]){
+    public static long avgArrayFind(int arr[]){
         long res = 0;
         res = sumArray(arr, 0);
         return res/arr.length;
@@ -32,7 +32,7 @@ class avgArray {
         System.out.println(avg);
 
         // recursive print
-        System.out.println(avgArray(arr));
+        System.out.println(avgArrayFind(arr));
 
     }
         
